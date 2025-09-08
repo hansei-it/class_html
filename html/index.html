@@ -1,0 +1,818 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 핵심 문법 튜토리얼</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    h2 {
+      color: #34495e;
+      background: #ecf0f1;
+      padding: 10px;
+      border-left: 5px solid #3498db;
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: #2980b9;
+      margin-top: 25px;
+    }
+
+    .step {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 15px 0;
+    }
+
+    .code-example {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Courier New', monospace;
+      overflow-x: auto;
+      margin: 10px 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      line-height: 1.4;
+      font-size: 14px;
+    }
+
+    .result {
+      background: #e8f5e8;
+      border: 1px solid #4caf50;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    .note {
+      background: #fff3cd;
+      border: 1px solid #ffeaa7;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    .warning {
+      background: #f8d7da;
+      border: 1px solid #f5c6cb;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .form-example {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+
+    input,
+    textarea,
+    select {
+      margin: 5px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+
+    button {
+      background: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    .list-example {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    .media-example {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🌐 HTML 핵심 문법 완전 가이드</h1>
+
+    <div class="note">
+      <strong>📚 학습 목표:</strong> 이 튜토리얼을 통해 HTML의 핵심 문법을 단계별로 익히고, 실제 웹페이지를 만들 수 있는 기초를 다집니다.
+    </div>
+
+    <!-- 1단계: HTML 기본 구조 -->
+    <h2>1단계: HTML 기본 구조 이해하기</h2>
+
+    <div class="step">
+      <h3>1.1 HTML 문서의 기본 골격</h3>
+      <p>모든 HTML 문서는 다음과 같은 기본 구조를 가집니다:</p>
+
+      <div class="code-example">
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="ko"&gt;
+        &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;페이지 제목&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;!-- 여기에 실제 내용이 들어갑니다 --&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+      </div>
+
+      <div class="result">
+        <strong>각 요소의 역할:</strong>
+        <ul>
+          <li><code>&lt;!DOCTYPE html&gt;</code>: HTML5 문서임을 선언</li>
+          <li><code>&lt;html&gt;</code>: 문서의 루트 요소</li>
+          <li><code>&lt;head&gt;</code>: 메타데이터와 문서 정보</li>
+          <li><code>&lt;body&gt;</code>: 실제 화면에 표시되는 내용</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2단계: 텍스트 요소 -->
+    <h2>2단계: 텍스트 요소 다루기</h2>
+
+    <div class="step">
+      <h3>2.1 제목 태그 (Heading Tags)</h3>
+      <p>HTML은 6단계의 제목 태그를 제공합니다:</p>
+
+      <div class="code-example">
+        &lt;h1&gt;가장 중요한 제목&lt;/h1&gt;
+        &lt;h2&gt;두 번째 중요한 제목&lt;/h2&gt;
+        &lt;h3&gt;세 번째 중요한 제목&lt;/h3&gt;
+        &lt;h4&gt;네 번째 중요한 제목&lt;/h4&gt;
+        &lt;h5&gt;다섯 번째 중요한 제목&lt;/h5&gt;
+        &lt;h6&gt;여섯 번째 중요한 제목&lt;/h6&gt;
+      </div>
+
+      <div class="result">
+        <h1>가장 중요한 제목</h1>
+        <h2>두 번째 중요한 제목</h2>
+        <h3>세 번째 중요한 제목</h3>
+        <h4>네 번째 중요한 제목</h4>
+        <h5>다섯 번째 중요한 제목</h5>
+        <h6>여섯 번째 중요한 제목</h6>
+      </div>
+    </div>
+
+    <div class="step">
+      <h3>2.2 문단과 텍스트 서식</h3>
+
+      <div class="code-example">
+        &lt;p&gt;이것은 일반적인 문단입니다.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;굵은 글씨&lt;/strong&gt;와 &lt;em&gt;기울임 글씨&lt;/em&gt;를 사용할 수 있습니다.&lt;/p&gt;
+        &lt;p&gt;&lt;mark&gt;하이라이트된 텍스트&lt;/mark&gt;와 &lt;del&gt;삭제된 텍스트&lt;/del&gt;도 가능합니다.&lt;/p&gt;
+        &lt;p&gt;줄바꿈을 하려면 &lt;br&gt; 태그를 사용합니다.&lt;/p&gt;
+        &lt;p&gt;&lt;small&gt;작은 글씨&lt;/small&gt;와 &lt;sub&gt;아래첨자&lt;/sub&gt;, &lt;sup&gt;위첨자&lt;/sup&gt;도
+        지원됩니다.&lt;/p&gt;
+      </div>
+
+      <div class="result">
+        <p>이것은 일반적인 문단입니다.</p>
+        <p><strong>굵은 글씨</strong>와 <em>기울임 글씨</em>를 사용할 수 있습니다.</p>
+        <p><mark>하이라이트된 텍스트</mark>와 <del>삭제된 텍스트</del>도 가능합니다.</p>
+        <p>줄바꿈을 하려면 <br> 태그를 사용합니다.</p>
+        <p><small>작은 글씨</small>와 <sub>아래첨자</sub>, <sup>위첨자</sup>도 지원됩니다.</p>
+      </div>
+    </div>
+
+    <!-- 3단계: 목록 -->
+    <h2>3단계: 목록 만들기</h2>
+
+    <div class="step">
+      <h3>3.1 순서가 있는 목록 (Ordered List)</h3>
+
+      <div class="code-example">
+        &lt;ol&gt;
+        &lt;li&gt;첫 번째 항목&lt;/li&gt;
+        &lt;li&gt;두 번째 항목&lt;/li&gt;
+        &lt;li&gt;세 번째 항목&lt;/li&gt;
+        &lt;/ol&gt;
+      </div>
+
+      <div class="result">
+        <ol>
+          <li>첫 번째 항목</li>
+          <li>두 번째 항목</li>
+          <li>세 번째 항목</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="step">
+      <h3>3.2 순서가 없는 목록 (Unordered List)</h3>
+
+      <div class="code-example">
+        &lt;ul&gt;
+        &lt;li&gt;항목 1&lt;/li&gt;
+        &lt;li&gt;항목 2&lt;/li&gt;
+        &lt;li&gt;항목 3&lt;/li&gt;
+        &lt;/ul&gt;
+      </div>
+
+      <div class="result">
+        <ul>
+          <li>항목 1</li>
+          <li>항목 2</li>
+          <li>항목 3</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <h3>3.3 중첩 목록</h3>
+
+      <div class="code-example">
+        &lt;ul&gt;
+        &lt;li&gt;웹 개발
+        &lt;ul&gt;
+        &lt;li&gt;HTML&lt;/li&gt;
+        &lt;li&gt;CSS&lt;/li&gt;
+        &lt;li&gt;JavaScript&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;백엔드 개발
+        &lt;ol&gt;
+        &lt;li&gt;Node.js&lt;/li&gt;
+        &lt;li&gt;Python&lt;/li&gt;
+        &lt;li&gt;Java&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;/li&gt;
+        &lt;/ul&gt;
+      </div>
+
+      <div class="result">
+        <ul>
+          <li>웹 개발
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </li>
+          <li>백엔드 개발
+            <ol>
+              <li>Node.js</li>
+              <li>Python</li>
+              <li>Java</li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4단계: 링크와 이미지 -->
+    <h2>4단계: 링크와 이미지</h2>
+
+    <div class="step">
+      <h3>4.1 링크 만들기</h3>
+
+      <div class="code-example">
+        &lt;p&gt;&lt;a href="https://www.google.com"&gt;구글로 이동&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href="#top"&gt;페이지 상단으로&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href="mailto:example@email.com"&gt;이메일 보내기&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href="tel:+821012345678"&gt;전화 걸기&lt;/a&gt;&lt;/p&gt;
+      </div>
+
+      <div class="result">
+        <p><a href="https://www.google.com" target="_blank">구글로 이동 (새 탭에서 열기)</a></p>
+        <p><a href="#top">페이지 상단으로</a></p>
+        <p><a href="mailto:example@email.com">이메일 보내기</a></p>
+        <p><a href="tel:+821012345678">전화 걸기</a></p>
+      </div>
+    </div>
+
+    <div class="step">
+      <h3>4.2 이미지 삽입</h3>
+
+      <div class="code-example">
+        &lt;img src="https://placehold.co/300x200/3498db/ff00ff?text=Sample+Image"
+        alt="샘플 이미지"
+        width="300"
+        height="200"&gt;
+      </div>
+
+      <div class="result">
+        <div class="media-example">
+          <img src="https://placehold.co/300x200/3498db/ff00ff?text=Sample+Image" alt="샘플 이미지" width="300" height="200">
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>💡 중요:</strong> <code>alt</code> 속성은 이미지가 로드되지 않을 때 대체 텍스트를 표시하며, 접근성을 위해 필수입니다.
+      </div>
+    </div>
+
+    <!-- 5단계: 테이블 -->
+    <h2>5단계: 테이블 만들기</h2>
+
+    <div class="step">
+      <h3>5.1 기본 테이블</h3>
+
+      <div class="code-example">
+        &lt;table&gt;
+        &lt;tr&gt;
+        &lt;th&gt;이름&lt;/th&gt;
+        &lt;th&gt;나이&lt;/th&gt;
+        &lt;th&gt;직업&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;김철수&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+        &lt;td&gt;개발자&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;이영희&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+        &lt;td&gt;디자이너&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+      </div>
+
+      <div class="result">
+        <table>
+          <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>직업</th>
+          </tr>
+          <tr>
+            <td>김철수</td>
+            <td>25</td>
+            <td>개발자</td>
+          </tr>
+          <tr>
+            <td>이영희</td>
+            <td>30</td>
+            <td>디자이너</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="step">
+      <h3>5.2 복잡한 테이블 (colspan, rowspan)</h3>
+
+      <div class="code-example">
+        &lt;table&gt;
+        &lt;tr&gt;
+        &lt;th colspan="2"&gt;개인정보&lt;/th&gt;
+        &lt;th&gt;연락처&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;이름&lt;/td&gt;
+        &lt;td&gt;나이&lt;/td&gt;
+        &lt;td rowspan="2"&gt;010-1234-5678&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;김민수&lt;/td&gt;
+        &lt;td&gt;28&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+      </div>
+
+      <div class="result">
+        <table>
+          <tr>
+            <th colspan="2">개인정보</th>
+            <th>연락처</th>
+          </tr>
+          <tr>
+            <td>이름</td>
+            <td>나이</td>
+            <td rowspan="2">010-1234-5678</td>
+          </tr>
+          <tr>
+            <td>김민수</td>
+            <td>28</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 6단계: 폼 요소 -->
+    <h2>6단계: 폼 요소</h2>
+
+    <div class="step">
+      <h3>6.1 기본 폼 요소들</h3>
+
+      <div class="code-example">
+        &lt;form&gt;
+        &lt;p&gt;
+        &lt;label for="name"&gt;이름:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="text" id="name" name="name" placeholder="이름을 입력하세요"&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+        &lt;label for="email"&gt;이메일:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="email" id="email" name="email" placeholder="이메일을 입력하세요"&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+        &lt;label for="password"&gt;비밀번호:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="password" id="password" name="password"&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+        &lt;label for="age"&gt;나이:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="number" id="age" name="age" min="1" max="120"&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+        &lt;label for="birthday"&gt;생년월일:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="date" id="birthday" name="birthday"&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+        &lt;label for="gender"&gt;성별:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="radio" id="male" name="gender" value="male"&gt;
+        &lt;label for="male"&gt;남성&lt;/label&gt;&lt;br&gt;
+        &lt;input type="radio" id="female" name="gender" value="female"&gt;
+        &lt;label for="female"&gt;여성&lt;/label&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+        &lt;label for="hobbies"&gt;취미 (복수 선택 가능):&lt;/label&gt;&lt;br&gt;
+        &lt;input type="checkbox" id="reading" name="hobbies" value="reading"&gt;
+        &lt;label for="reading"&gt;독서&lt;/label&gt;&lt;br&gt;
+        &lt;input type="checkbox" id="sports" name="hobbies" value="sports"&gt;
+        &lt;label for="sports"&gt;운동&lt;/label&gt;&lt;br&gt;
+        &lt;input type="checkbox" id="music" name="hobbies" value="music"&gt;
+        &lt;label for="music"&gt;음악&lt;/label&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+        &lt;label for="country"&gt;국가:&lt;/label&gt;&lt;br&gt;
+        &lt;select id="country" name="country"&gt;
+        &lt;option value=""&gt;선택하세요&lt;/option&gt;
+        &lt;option value="kr"&gt;대한민국&lt;/option&gt;
+        &lt;option value="us"&gt;미국&lt;/option&gt;
+        &lt;option value="jp"&gt;일본&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+        &lt;label for="message"&gt;메시지:&lt;/label&gt;&lt;br&gt;
+        &lt;textarea id="message" name="message" rows="4" cols="50" placeholder="메시지를 입력하세요"&gt;&lt;/textarea&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+        &lt;button type="submit"&gt;제출&lt;/button&gt;
+        &lt;button type="reset"&gt;초기화&lt;/button&gt;
+        &lt;/p&gt;
+        &lt;/form&gt;
+      </div>
+
+      <div class="result">
+        <div class="form-example">
+          <form>
+            <p>
+              <label for="name">이름:</label><br>
+              <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+            </p>
+
+            <p>
+              <label for="email">이메일:</label><br>
+              <input type="email" id="email" name="email" placeholder="이메일을 입력하세요">
+            </p>
+
+            <p>
+              <label for="password">비밀번호:</label><br>
+              <input type="password" id="password" name="password">
+            </p>
+
+            <p>
+              <label for="age">나이:</label><br>
+              <input type="number" id="age" name="age" min="1" max="120">
+            </p>
+
+            <p>
+              <label for="birthday">생년월일:</label><br>
+              <input type="date" id="birthday" name="birthday">
+            </p>
+
+            <p>
+              <label for="gender">성별:</label><br>
+              <input type="radio" id="male" name="gender" value="male">
+              <label for="male">남성</label><br>
+              <input type="radio" id="female" name="gender" value="female">
+              <label for="female">여성</label>
+            </p>
+
+            <p>
+              <label for="hobbies">취미 (복수 선택 가능):</label><br>
+              <input type="checkbox" id="reading" name="hobbies" value="reading">
+              <label for="reading">독서</label><br>
+              <input type="checkbox" id="sports" name="hobbies" value="sports">
+              <label for="sports">운동</label><br>
+              <input type="checkbox" id="music" name="hobbies" value="music">
+              <label for="music">음악</label>
+            </p>
+
+            <p>
+              <label for="country">국가:</label><br>
+              <select id="country" name="country">
+                <option value="">선택하세요</option>
+                <option value="kr">대한민국</option>
+                <option value="us">미국</option>
+                <option value="jp">일본</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="message">메시지:</label><br>
+              <textarea id="message" name="message" rows="4" cols="50" placeholder="메시지를 입력하세요"></textarea>
+            </p>
+
+            <p>
+              <button type="submit">제출</button>
+              <button type="reset">초기화</button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7단계: 시맨틱 요소 -->
+    <h2>7단계: 시맨틱 요소 (의미있는 구조)</h2>
+
+    <div class="step">
+      <h3>7.1 주요 시맨틱 요소들</h3>
+
+      <div class="code-example">
+        &lt;header&gt;
+        &lt;h1&gt;웹사이트 제목&lt;/h1&gt;
+        &lt;nav&gt;
+        &lt;a href="#home"&gt;홈&lt;/a&gt; |
+        &lt;a href="#about"&gt;소개&lt;/a&gt; |
+        &lt;a href="#contact"&gt;연락처&lt;/a&gt;
+        &lt;/nav&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+        &lt;section&gt;
+        &lt;h2&gt;주요 섹션&lt;/h2&gt;
+        &lt;article&gt;
+        &lt;h3&gt;기사 제목&lt;/h3&gt;
+        &lt;p&gt;기사 내용...&lt;/p&gt;
+        &lt;/article&gt;
+        &lt;/section&gt;
+
+        &lt;aside&gt;
+        &lt;h3&gt;사이드바&lt;/h3&gt;
+        &lt;p&gt;관련 정보나 광고...&lt;/p&gt;
+        &lt;/aside&gt;
+        &lt;/main&gt;
+
+        &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 웹사이트. 모든 권리 보유.&lt;/p&gt;
+        &lt;/footer&gt;
+      </div>
+
+      <div class="result">
+        <header style="background: #3498db; color: white; padding: 20px; margin: 10px 0; border-radius: 5px;">
+          <h1 style="margin: 0;">웹사이트 제목</h1>
+          <nav style="margin-top: 10px;">
+            <a href="#home" style="color: white; text-decoration: none;">홈</a> |
+            <a href="#about" style="color: white; text-decoration: none;">소개</a> |
+            <a href="#contact" style="color: white; text-decoration: none;">연락처</a>
+          </nav>
+        </header>
+
+        <main style="display: flex; gap: 20px; margin: 10px 0;">
+          <section style="flex: 2; background: #ecf0f1; padding: 20px; border-radius: 5px;">
+            <h2>주요 섹션</h2>
+            <article style="background: white; padding: 15px; border-radius: 3px; margin-top: 10px;">
+              <h3>기사 제목</h3>
+              <p>기사 내용...</p>
+            </article>
+          </section>
+
+          <aside style="flex: 1; background: #f39c12; color: white; padding: 20px; border-radius: 5px;">
+            <h3>사이드바</h3>
+            <p>관련 정보나 광고...</p>
+          </aside>
+        </main>
+
+        <footer
+          style="background: #2c3e50; color: white; padding: 20px; margin: 10px 0; border-radius: 5px; text-align: center;">
+          <p style="margin: 0;">&copy; 2024 웹사이트. 모든 권리 보유.</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- 8단계: 멀티미디어 -->
+    <h2>8단계: 멀티미디어 요소</h2>
+
+    <div class="step">
+      <h3>8.1 비디오와 오디오</h3>
+
+      <div class="code-example">
+        &lt;!-- 비디오 --&gt;
+        &lt;video width="400" controls&gt;
+        &lt;source src="movie.mp4" type="video/mp4"&gt;
+        &lt;source src="movie.ogg" type="video/ogg"&gt;
+        브라우저가 비디오를 지원하지 않습니다.
+        &lt;/video&gt;
+
+        &lt;!-- 오디오 --&gt;
+        &lt;audio controls&gt;
+        &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+        &lt;source src="audio.ogg" type="audio/ogg"&gt;
+        브라우저가 오디오를 지원하지 않습니다.
+        &lt;/audio&gt;
+      </div>
+
+      <div class="note">
+        <strong>💡 참고:</strong> 실제 비디오나 오디오 파일이 없어서 예시만 보여드립니다. 실제 사용 시에는 올바른 파일 경로를 지정해야 합니다.
+      </div>
+    </div>
+
+    <!-- 9단계: 특수 문자와 엔티티 -->
+    <h2>9단계: 특수 문자와 HTML 엔티티</h2>
+
+    <div class="step">
+      <h3>9.1 자주 사용되는 HTML 엔티티</h3>
+
+      <div class="code-example">
+        &lt;p&gt;&amp;lt; &amp;gt; &amp;amp; &amp;quot; &amp;#39;&lt;/p&gt;
+        &lt;p&gt;&amp;copy; &amp;reg; &amp;trade;&lt;/p&gt;
+        &lt;p&gt;&amp;nbsp; (공백)&lt;/p&gt;
+        &lt;p&gt;&amp;#8361; (원화 기호)&lt;/p&gt;
+        &lt;p&gt;&amp;#169; (저작권 기호)&lt;/p&gt;
+      </div>
+
+      <div class="result">
+        <p>&lt; &gt; &amp; &quot; &#39;</p>
+        <p>&copy; &reg; &trade;</p>
+        <p>&nbsp; (공백)</p>
+        <p>&#8361; (원화 기호)</p>
+        <p>&#169; (저작권 기호)</p>
+      </div>
+    </div>
+
+    <!-- 10단계: 실습 프로젝트 -->
+    <h2>10단계: 실습 프로젝트 - 간단한 개인 프로필 페이지</h2>
+
+    <div class="step">
+      <h3>10.1 완성된 HTML 페이지 예시</h3>
+      <p>지금까지 배운 모든 요소들을 활용하여 간단한 개인 프로필 페이지를 만들어보겠습니다:</p>
+
+      <div class="code-example">
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="ko"&gt;
+        &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;김개발의 프로필&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;header&gt;
+        &lt;h1&gt;김개발 (Kim Developer)&lt;/h1&gt;
+        &lt;nav&gt;
+        &lt;a href="#about"&gt;소개&lt;/a&gt; |
+        &lt;a href="#skills"&gt;기술&lt;/a&gt; |
+        &lt;a href="#contact"&gt;연락처&lt;/a&gt;
+        &lt;/nav&gt;
+        &lt;/header&gt;
+
+        &lt;main&gt;
+        &lt;section id="about"&gt;
+        &lt;h2&gt;자기소개&lt;/h2&gt;
+        &lt;p&gt;안녕하세요! 저는 &lt;strong&gt;웹 개발자&lt;/strong&gt;를 꿈꾸는 &lt;em&gt;김개발&lt;/em&gt;입니다.&lt;/p&gt;
+        &lt;p&gt;현재 &lt;mark&gt;HTML, CSS, JavaScript&lt;/mark&gt;를 공부하고 있습니다.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section id="skills"&gt;
+        &lt;h2&gt;기술 스택&lt;/h2&gt;
+        &lt;ul&gt;
+        &lt;li&gt;HTML5&lt;/li&gt;
+        &lt;li&gt;CSS3&lt;/li&gt;
+        &lt;li&gt;JavaScript&lt;/li&gt;
+        &lt;li&gt;React (학습 중)&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;/section&gt;
+
+        &lt;section id="contact"&gt;
+        &lt;h2&gt;연락처&lt;/h2&gt;
+        &lt;p&gt;이메일: &lt;a href="mailto:kim@example.com"&gt;kim@example.com&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;전화: &lt;a href="tel:+821012345678"&gt;010-1234-5678&lt;/a&gt;&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;/main&gt;
+
+        &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 김개발. 모든 권리 보유.&lt;/p&gt;
+        &lt;/footer&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+      </div>
+    </div>
+
+    <!-- 마무리 -->
+    <h2>🎉 축하합니다! HTML 기초를 완료했습니다!</h2>
+
+    <div class="step">
+      <h3>다음 단계</h3>
+      <p>이제 HTML의 기본 문법을 익혔으니, 다음 단계로 넘어가보세요:</p>
+
+      <ol>
+        <li><strong>CSS 학습:</strong> 웹페이지를 아름답게 꾸미는 방법</li>
+        <li><strong>JavaScript 학습:</strong> 웹페이지에 동적인 기능 추가</li>
+        <li><strong>실제 프로젝트:</strong> 포트폴리오 웹사이트 만들기</li>
+      </ol>
+    </div>
+
+    <div class="warning">
+      <strong>⚠️ 주의사항:</strong>
+      <ul>
+        <li>모든 HTML 태그는 소문자로 작성하는 것이 좋습니다</li>
+        <li>태그는 항상 닫아주세요 (&lt;tag&gt;&lt;/tag&gt;)</li>
+        <li>속성값은 따옴표로 감싸주세요</li>
+        <li>의미있는 태그를 사용하여 접근성을 고려하세요</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <strong>📚 추가 학습 자료:</strong>
+      <ul>
+        <li><a href="https://developer.mozilla.org/ko/docs/Web/HTML" target="_blank">MDN HTML 문서</a></li>
+        <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML 튜토리얼</a></li>
+        <li><a href="https://html.spec.whatwg.org/" target="_blank">HTML 공식 명세서</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
