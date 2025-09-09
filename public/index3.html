@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사용자 등록 (form action GET)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 300px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .hint {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>사용자 등록</h1>
+
+  <form action="/users-form" method="get">
+    <input type="text" name="name" placeholder="이름" required>
+    <input type="number" name="age" placeholder="나이" min="0" max="150" required>
+    <button type="submit">등록</button>
+  </form>
+
+  <div class="hint">이 폼은 form action 방식으로 서버에 GET 전송합니다.</div>
+</body>
+
+</html>
