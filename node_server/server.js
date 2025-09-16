@@ -19,11 +19,13 @@ let users = [];
 
 // 루트 경로 - index.html 서빙
 app.get('/', (req, res) => {
+  console.log('get /', users);
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 // 모든 사용자 조회
 app.get('/users', (req, res) => {
+  console.log('get /users', users);
   res.json({
     success: true,
     count: users.length,
@@ -34,6 +36,7 @@ app.get('/users', (req, res) => {
 // 새 사용자 등록 (fetch JSON 전송용)
 app.post('/users', (req, res) => {
   const { name, age } = req.body;
+  console.log('post /users', {name, age});
 
   // 간단한 입력 검증
   if (!name?.trim() || !age || age < 0 || age > 150) {
@@ -63,6 +66,7 @@ app.post('/users', (req, res) => {
 // 폼 전송 처리 (form action POST 전송용)
 app.post('/users-form', (req, res) => {
   const { name, age } = req.body;
+  console.log('post /users-form', {name, age});
 
   // 간단한 입력 검증
   if (!name?.trim() || !age || age < 0 || age > 150) {
@@ -126,6 +130,7 @@ app.post('/users-form', (req, res) => {
 // 폼 전송 처리 (form action GET 전송용)
 app.get('/users-form', (req, res) => {
   const { name, age } = req.query;
+  console.log('get /users-form', {name, age});
 
   // 간단한 입력 검증
   if (!name?.trim() || !age || age < 0 || age > 150) {
@@ -189,6 +194,7 @@ app.get('/users-form', (req, res) => {
 // 특정 사용자 조회
 app.get('/users/:id', (req, res) => {
   const user = users.find(u => u.id === parseInt(req.params.id));
+  console.log('get /users/id', user);
 
   if (!user) {
     return res.status(404).json({
